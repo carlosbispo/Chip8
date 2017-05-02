@@ -64,9 +64,10 @@ int main(int argc, char *argv[])
         }
 
         cpu.emulateCycle();
+	updateInput(cpu);
         if(clock.getElapsedTime().asSeconds() >= refreshSpeed){
             cpu.updateTimers();
-            updateInput(cpu);
+            
             clock.restart();
         }
 
